@@ -166,8 +166,7 @@ function fetch_metar($station, $new) {
   $station = strtoupper($station);
 
   /* We use the @ notation, because it might fail. */
-  $file  = @file('http://weather.noaa.gov/pub/data/' .
-                   "observations/metar/stations/$station.TXT");
+  $file  = @file('https://tgftp.nws.noaa.gov/data/observations/metar/stations/$station.TXT");
 
   /* Here we test to see if we actually got a METAR. */
   if (is_array($file)) {
